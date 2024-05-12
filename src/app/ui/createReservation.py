@@ -23,18 +23,9 @@ class CreateReservation(QWidget):
         lt_lastName = LineEdit.createVLabelLineEdit(
             "Last Name", wt_lastName
         )
-        wt_age = LineEdit.createLineEdit("customer birthdate")
-        lt_age = LineEdit.createVLabelLineEdit(
-            "Birthdate", wt_age
-        )
         wt_contactNumber = LineEdit.createLineEdit("customer contact number")
         lt_contact = LineEdit.createVLabelLineEdit(
             "Contact No.", wt_contactNumber
-        )
-
-        lt_ageContact = QHBoxLayout()
-        Layout.addMultipleLayoutsToLayout(
-            [lt_age, lt_contact], lt_ageContact
         )
 
         # reservation information widgets and widget-layouts
@@ -87,7 +78,7 @@ class CreateReservation(QWidget):
         Layout.addLayoutToLayout(lt_pageHeader, widgetLayout)
 
         Layout.addMultipleLayoutsToLayout(
-            [lt_firstName, lt_lastName, lt_ageContact],
+            [lt_firstName, lt_lastName, lt_contact],
             lt_custInfoGoupBoxLayout
         )
         wt_custInfoGroupBox.setLayout(lt_custInfoGoupBoxLayout)
@@ -112,7 +103,6 @@ class CreateReservation(QWidget):
         wt_createButton.clicked.connect(slots.clicked_create_reservation)
         wt_firstName.textEdited.connect(slots.textEdited_firstName)
         wt_lastName.textEdited.connect(slots.textEdited_lastName)
-        wt_age.textEdited.connect(slots.textEdited_birthdate)
         wt_contactNumber.textEdited.connect(slots.textEdited_contactNumber)
         wt_preferredCat.textEdited.connect(slots.textEdited_preferredCat)
         wt_employeeInCharge.textEdited.connect(

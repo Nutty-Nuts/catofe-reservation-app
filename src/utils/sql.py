@@ -3,7 +3,7 @@ import mysql.connector
 
 
 def CREATE_TABLE(table_name, table_contents):
-    query = "CREATE TABLE IF NOT EXISTS {} ({}) "
+    query = "CREATE TABLE IF NOT EXISTS {} ({});"
     query = query.format(table_name, table_contents)
 
     try:
@@ -98,4 +98,5 @@ def GET_TABLE_DATA_CONDITIONAL(columns, table, conditions):
         return cursor.fetchall()
     except mysql.connector.Error as err:
         print("Something went wrong: {}".format(err))
-        return None
+        return cursor.fetchall()
+        # return None
