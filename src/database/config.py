@@ -1,4 +1,4 @@
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv
 import mysql.connector
 import os
 
@@ -22,3 +22,5 @@ db = mysql.connector.connect(
     database=os.getenv("DATABASE_SCHEMA")
 )
 cursor = db.cursor()
+
+print(db)

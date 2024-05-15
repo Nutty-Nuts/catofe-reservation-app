@@ -1,22 +1,18 @@
-from os import initgroups
-from PySide6.QtWidgets import QApplication
-from app.ui.window import Window
-from app.logic.createReservationLogic import information
+from PySide6.QtWidgets import QApplication, QMainWindow
 import sys
-import data.purge as purge
-import data.init as init
 
-purge.purge()
-init.init_tables()
-init.init_cats()
-init.init_employee()
-init.init_customer()
-init.init_reservation()
-init.test_customer_select()
-
+from app.widgets.tab_widget import Tab
 
 app = QApplication(sys.argv)
-window = Window()
-window.show()
+
+main_widget = Tab()
+
+main_window = QMainWindow()
+main_window.show()
+main_window.setCentralWidget(main_widget)
+
+main_window.resize(480, 560)
+main_window.setMinimumWidth(480)
+main_window.setMinimumHeight(560)
 
 app.exec()
