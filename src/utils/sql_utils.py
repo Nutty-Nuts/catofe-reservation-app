@@ -12,6 +12,7 @@ def CREATE_TABLE(table_name, table_contents):
         print("Something went wrong at CREATE_TABLE({}, {}): {}".format(
             table_name, table_contents, err)
         )
+        print()
 
 
 def DROP_TABLE(table_name):
@@ -22,6 +23,7 @@ def DROP_TABLE(table_name):
         cursor.execute(query)
     except mysql.connector.Error as err:
         print("Something went wrong at DROP_TABLE({}): {}".format(table_name, err))
+        print()
 
 
 def INSERT_ENTITY_INSTANCE(table, table_columns, values):
@@ -44,6 +46,7 @@ def INSERT_ENTITY_INSTANCE(table, table_columns, values):
         print("Something went wrong at INSERT_ENTITY_INSTANCE({}, {}, {}): {}".format(
             table, table_columns, values, err)
         )
+        print()
 
 
 def INSERT_ENTITY_INSTANCES(table, table_columns, values):
@@ -66,6 +69,7 @@ def INSERT_ENTITY_INSTANCES(table, table_columns, values):
         print("Something went wrong at INSERT_ENTITY_INSTANCES({}, {}, {}): {}".format(
             table, table_columns, values, err)
         )
+        print()
 
 
 def UPDATE_ENTITY_INSTANCE(table, columns, identifier):
@@ -83,6 +87,7 @@ def UPDATE_ENTITY_INSTANCE(table, columns, identifier):
         print("Something went wrong at UPDATE_ENTITY_INSTANCE({}, {}, {}): {}".format(
             table, columns, err)
         )
+        print()
 
 
 def GET_TABLE_DATA(columns, table):
@@ -97,6 +102,7 @@ def GET_TABLE_DATA(columns, table):
             columns, table, err)
         )
         print("Failed to fetch data, returning []")
+        print()
         return []
 
 
@@ -112,6 +118,7 @@ def GET_TABLE_DATA_CONDITIONAL(columns, table, conditions):
             columns, table, err)
         )
         print("Failed to fetch data, returning []")
+        print()
         return []
 
 
