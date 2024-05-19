@@ -1,9 +1,27 @@
 from PySide6.QtWidgets import QApplication, QMainWindow
-import sys
-
 from app.widgets.tab_widget import Tab
 
-app = QApplication(sys.argv)
+import sys
+import database.purge as purge
+import database.init as init
+
+if sys.argv[1] == "--purge":
+    purge.purge()
+if sys.argv[1] == "--init":
+    init.init_tables()
+    init.init_customer()
+    init.init_employee()
+    init.init_cats()
+    init.init_reservation()
+if sys.argv[1] == "--reset":
+    purge.purge()
+    init.init_tables()
+    init.init_customer()
+    init.init_employee()
+    init.init_cats()
+    init.init_reservation()
+
+app = QApplication()
 
 main_widget = Tab()
 
