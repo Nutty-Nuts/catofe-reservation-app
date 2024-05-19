@@ -21,7 +21,6 @@ def init_tables():
         employee_first_name varchar(255),
         employee_last_name varchar(255),
         employee_contact_no varchar(255),
-        employee_birthdate varchar(255),
 
         PRIMARY KEY (employee_id)
         """
@@ -32,6 +31,7 @@ def init_tables():
         """
         cat_id int NOT NULL AUTO_INCREMENT,
         cat_name varchar(255),
+        cat_breed varchar(255),
         cat_birthdate date default NULL,
 
         PRIMARY KEY (cat_id)
@@ -60,12 +60,12 @@ def init_tables():
 def init_cats():
     SQL.INSERT_ENTITY_INSTANCES(
         "cat",
-        "cat_name, cat_birthdate",
+        "cat_name, cat_breed, cat_birthdate",
         [
-            ('Maxell', '2020-01-01'),
-            ('Arthur', '2021-06-21'),
-            ('Anis', '2018-07-11'),
-            ('Andrea', '207-12-25'),
+            ('Maxell', 'Tuxedo Cat', '2020-01-01'),
+            ('Arthur', 'British Shorthair', '2021-06-21'),
+            ('Anis', 'Orange Cat', '2018-07-11'),
+            ('Andrea', 'American Curl', '207-12-25'),
         ]
     )
 
@@ -73,10 +73,10 @@ def init_cats():
 def init_employee():
     SQL.INSERT_ENTITY_INSTANCES(
         "employee",
-        "employee_first_name, employee_last_name, employee_contact_no, employee_birthdate",
+        "employee_first_name, employee_last_name, employee_contact_no",
         [
-            ("John", "Smith", "0912876123", "2000-01-01"),
-            ("Wilhelm", "Helmsman", "0988172980", "2002-03-11")
+            ("John", "Smith", "0912876123"),
+            ("Wilhelm", "Helmsman", "0988172980")
         ]
     )
 
