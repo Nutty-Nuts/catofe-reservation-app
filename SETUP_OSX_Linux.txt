@@ -1,0 +1,45 @@
+HOW TO EXECUTE APPLICATION?
+
+1. Create python virtual environment:
+    $ python -m venv venv
+
+2. Activate python virtual Environment:
+    $ source venv/bin/activate
+
+3. Install dependencies:
+    $ pip install -r requirements.txt
+
+4. Install and Launch LAMMP or XAMMP
+
+5. Create .env file at the root directory with the following contents:
+    # for demonstration purposes in OSX/Linux
+
+    DATABASE_USER="root"                    # enter database user here
+    DATABASE_PASSWORD=""                    # enter database password here
+    DATABASE_SCHEMA="catofe_reservation"    # enter target database schema
+
+
+6. Run program
+    $ python src\main.py
+
+        or
+
+    $ python src\main.py --init    # run this when starting for the first time
+
+
+
+APPLICATION ARGUMENTS
+
+    --purge     # clear database tables
+    --init      # load sample data to database
+    --reset     # purge + init
+
+1. Clearing Database Tables
+    $ python src\main.py --purge
+
+2. Loading Sample Data to Database
+    $ python src\main.py --init
+
+3. Resetting Database Table to Default
+    $ python src\main.py --reset
+

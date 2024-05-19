@@ -1,0 +1,46 @@
+HOW TO EXECUTE APPLICATION?
+
+1. Create python virtual environment:
+    > python -m venv venv
+
+2. Activate python virtual Environment:
+    > venv\Scripts\activate.bat     # in cmd.exe
+    > venv\Scripts\Activate.ps1     # in Powershell
+
+3. Install dependencies:
+    > pip install -r requirements.txt
+
+4. Launch XAMMP (Apache and MySQL)
+
+5. Create .env file at the root directory with the following contents:
+    # for demonstration purposes in Windows
+
+    DATABASE_USER="root"                    # enter database user here
+    DATABASE_PASSWORD=""                    # enter database password here
+    DATABASE_SCHEMA="catofe_reservation"    # enter target database schema
+
+
+6. Run program
+    > python src\main.py
+
+        or
+
+    > python src\main.py --init    # run this when starting for the first time
+
+
+
+APPLICATION ARGUMENTS
+
+    --purge     # clear database tables
+    --init      # load sample data to database
+    --reset     # purge + init
+
+1. Clearing Database Tables
+    > python src\main.py --purge
+
+2. Loading Sample Data to Database
+    > python src\main.py --init
+
+3. Resetting Database Table to Default
+    > python src\main.py --reset
+
