@@ -5,21 +5,24 @@ import sys
 import database.purge as purge
 import database.init as init
 
-if sys.argv[1] == "--purge":
-    purge.purge()
-if sys.argv[1] == "--init":
-    init.init_tables()
-    init.init_customer()
-    init.init_employee()
-    init.init_cats()
-    init.init_reservation()
-if sys.argv[1] == "--reset":
-    purge.purge()
-    init.init_tables()
-    init.init_customer()
-    init.init_employee()
-    init.init_cats()
-    init.init_reservation()
+has_args = len(sys.argv) > 1
+
+if has_args:
+    if sys.argv[1] == "--purge":
+        purge.purge()
+    if sys.argv[1] == "--init":
+        init.init_tables()
+        init.init_customer()
+        init.init_employee()
+        init.init_cats()
+        init.init_reservation()
+    if sys.argv[1] == "--reset":
+        purge.purge()
+        init.init_tables()
+        init.init_customer()
+        init.init_employee()
+        init.init_cats()
+        init.init_reservation()
 
 app = QApplication()
 
